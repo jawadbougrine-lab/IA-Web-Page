@@ -93,9 +93,14 @@ header a {
 
 /* CTA SECTION */
 .cta-section {
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
     background: #eef4ff;
+}
+
+.cta-section p {
+    margin: 15px 0 25px 0;
+    font-size: 1.1rem;
 }
 
 /* FOOTER */
