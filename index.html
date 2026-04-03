@@ -1,296 +1,377 @@
 <!DOCTYPE html>
-<html lang="fr">
 
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JB Consulting - Product Owner</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="styles.css">
-
-
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Consultant Digital | Jawad - Product Owner</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#0053cf",
+                    "tertiary-fixed": "#dce1ff",
+                    "surface-container-high": "#e3e7ff",
+                    "on-tertiary-fixed": "#101a38",
+                    "on-background": "#101a38",
+                    "surface-variant": "#dce1ff",
+                    "surface-container-highest": "#dce1ff",
+                    "on-secondary-fixed-variant": "#0040a2",
+                    "surface-bright": "#faf8ff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#3c4566",
+                    "primary": "#004ac6",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#4b5475",
+                    "inverse-on-surface": "#eff0ff",
+                    "surface-tint": "#0053db",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d0d8ff",
+                    "outline": "#737686",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary-container": "#636c8e",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2563eb",
+                    "on-secondary-container": "#fefcff",
+                    "secondary-container": "#2f6ded",
+                    "tertiary-fixed-dim": "#bcc5ec",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#101a38",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary-fixed": "#dae2ff",
+                    "surface-container": "#ebedff",
+                    "on-primary": "#ffffff",
+                    "surface": "#faf8ff",
+                    "on-tertiary-container": "#efefff",
+                    "inverse-surface": "#262f4e",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-primary-fixed": "#00174b",
+                    "error": "#ba1a1a",
+                    "background": "#faf8ff",
+                    "surface-container-low": "#f3f2ff",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed": "#001848",
+                    "on-surface-variant": "#434655",
+                    "secondary-fixed-dim": "#b2c5ff",
+                    "on-primary-container": "#eeefff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift { transition: background-color 0.3s ease; }
+        .glass-nav { backdrop-filter: blur(12px); }
+    </style>
 </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl">
 
-<body>
+  <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
 
-<header>
+    <span class="text-2xl font-serif text-black font-bold">
+      JB Consulting
+    </span>
 
-<div class="container">
+    <!-- menu desktop -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#expertises" class="text-slate-600 font-medium hover:text-blue-600">Expertises</a>
+      <a href="#services" class="text-slate-600 font-medium hover:text-blue-600">Services</a>
+      <a href="#contact" class="text-slate-600 font-medium hover:text-blue-600">Contact</a>
 
-<h1>JB Consulting</h1>
+      <a href="mailto:jawadbougrine@gmail.com"
+         class="bg-primary text-white px-6 py-2 rounded-full">
+         Me contacter
+      </a>
+    </div>
 
-<nav>
+    <!-- bouton mobile -->
+    <button id="menu-btn" class="md:hidden text-primary">
+      <span class="material-symbols-outlined text-3xl">menu</span>
+    </button>
 
-<ul>
+  </div>
 
-<li><a href="#expertises">Expertises</a></li>
+  <!-- menu mobile -->
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col gap-4 px-8 pb-6 bg-white">
 
-<li><a href="#services">Services</a></li>
+    <a href="#expertises" class="py-2 border-b">Expertises</a>
 
-<li><a href="#contact" class="btn">Contact</a></li>
+    <a href="#services" class="py-2 border-b">Services</a>
 
-</ul>
+    <a href="#contact" class="py-2 border-b">Contact</a>
+
+    <a href="mailto:jawadbougrine@gmail.com"
+       class="bg-primary text-white px-6 py-3 rounded-full text-center mt-4">
+       Me contacter
+    </a>
+
+  </div>
 
 </nav>
-
-</div>
-
-</header>
-
-
-<section class="hero">
-
-<div class="container">
-
-<h2>
-
-Vous avez un produit à 
-<span class="highlight">structurer</span>.
-
-<br>
-
-Je vous aide à le 
-<span class="highlight">concevoir</span> 
-et le 
-<span class="highlight">livrer efficacement</span>.
-
-</h2>
-
-
-<p>
-
-Product Owner avec plus de 10 ans d'expérience dans l'assurance,
-j’accompagne les équipes dans la conception de
-<span class="highlight">produits digitaux</span> utiles,
-performants et alignés avec la 
-<span class="highlight">valeur business</span>.
-
-</p>
-
-
-<a href="#contact" class="cta">
-
-Discutons de votre projet
-
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[770px] flex items-center overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<h1 class="text-5xl md:text-7xl font-headline font-bold leading-tight text-on-surface mb-6">
+                        Vous avez un produit à <span class="text-primary italic">structurer</span>. Je vous aide à le <span class="text-primary italic">concevoir</span> et le <span class="text-primary italic">livrer efficacement.</span>
+                    </h1>
+<p class="text-xl text-on-surface-variant mb-10 max-w-lg leading-relaxed">
+                        Product Owner avec plus de 10 ans d'expérience dans l'accompagnement de projets complexes et de transformations digitales.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a   href="mailto:jawadbougrine@gmail.com?subject=Demande%20de%20contact&body=Bonjour%20Jawad,%0A%0AJe%20souhaite%20échanger%20concernant%20mon%20projet."
+     class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-primary/30 transition-all">
+                        Discutons de votre projet
 </a>
-
+<button class="px-8 py-4 rounded-full font-semibold text-lg text-primary border-2 border-primary/10 hover:bg-primary-container/10 transition-all">
+                            Découvrir mes services
+                        </button>
 </div>
-
+</div>
+<div class="relative">
+<div class="aspect-square w-full max-w-xs md:max-w-md lg:max-w-xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Collaborative work space" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" data-alt="Modern professional office setting with soft natural light, focused atmosphere, and minimal clean design elements representing digital productivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChAoA4yQYZWBru-LwQmcSs0aKCHyfE0X8doEFP3PIWDkukzkNr45CEc3miOtfCeKV87vllH9blqGJlhpn4Gj51YbDuWQwm5cHJCZKJ10GhamY2KywgcTS1gWZ0IgeTUSVyVuMWaeEDFzkSz5CQgBDrhbV8pU3RjrICng-2NKpHwo15slOwpWRSORtRUCEZVdpu45y-c4UeF6_Ls6b96uX10zOT42KWBhXLFjCcKFEyb02LAQcF6Atr4XX04J9LdQ40tTzrc_3-"/>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 md:bottom-6 md:left-6 md:translate-x-0 bg-white p-5 md:p-6 rounded-2xl shadow-xl max-w-[260px] md:max-w-xs border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+<span class="font-bold text-on-surface text-sm uppercase tracking-wider">Expertise Sénior</span>
+</div>
+<p class="text-on-surface-variant text-sm">Product Owner agile spécialisé dans les écosystèmes assurantiels.</p>
+</div>
+</div>
+</div>
+<!-- Aesthetic Background Accents -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-surface-container-low -z-10 rounded-l-[100px] opacity-50"></div>
 </section>
-
-
-<section id="expertise" class="expertise">
-
-<div class="container">
-
-<h2>Expertises</h2>
-
-<div class="expertise-grid">
-
-<div class="expertise-card">
-
-<img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600">
-
-<h3>Product Discovery</h3>
-
-<p>
-Identification des besoins utilisateurs et validation des opportunités produit.
-</p>
-
+<!-- Expertises Section: Bento Grid -->
+<section class="py-24 bg-surface" id="expertises">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Expertises</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface">Une approche holistique du produit.</h2>
 </div>
-
-
-<div class="expertise-card">
-
-<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600">
-
-<h3>Product Management</h3>
-
-<p>
-Structuration du backlog, priorisation et pilotage des itérations.
-</p>
-
+<p class="text-on-surface-variant max-w-sm">De l’idée initiale à la mise en production, j’accompagne chaque étape du cycle de vie de votre produit digital.</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Product Discovery -->
+<div class="bg-surface-container-low rounded-[2rem] p-8 hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
 </div>
-
-
-<div class="expertise-card">
-
-<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600">
-
-<h3>Product Delivery</h3>
-
-<p>
-Coordination des équipes tech et amélioration continue des produits.
-</p>
-
+<h3 class="text-2xl font-headline font-bold mb-4">Product Discovery</h3>
+<p class="text-on-surface-variant leading-relaxed">Identification des besoins utilisateurs et validation de la proposition de valeur avant le développement.</p>
 </div>
-
+<!-- Product Management -->
+<div class="bg-primary text-on-primary rounded-[2rem] p-8 shadow-2xl shadow-primary/20 md:-translate-y-4">
+<div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-primary text-3xl">architecture</span>
 </div>
-
+<h3 class="text-2xl font-headline font-bold mb-4">Product Management</h3>
+<p class="text-on-primary/80 leading-relaxed">Définition de la vision produit, roadmap stratégique et pilotage de la performance par les KPIs métiers.</p>
 </div>
-
+<!-- Product Delivery -->
+<div class="bg-surface-container-low rounded-[2rem] p-8 hover:bg-surface-container-high transition-colors duration-500">
+<div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">speed</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">Product Delivery</h3>
+<p class="text-on-surface-variant leading-relaxed">Coordination agile des équipes tech, gestion du backlog et assurance de la qualité des livrables finaux.</p>
+</div>
+</div>
+</div>
 </section>
-
-
-
-<section class="about">
-
-<div class="container">
-
-<div class="about-flex">
-
-<img src="images/ma-photo-pro.jpg" alt="Jawad Bougrine Product Owner">
-
-
+<!-- About Section -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div class="relative">
+<div class="aspect-[4/5] w-full max-w-xs md:max-w-md lg:max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+<img alt="Consultant portrait" class="w-full h-full object-cover" data-alt="Professional portrait of a male consultant in his 30s with a confident and friendly expression, wearing business casual attire in a bright modern space" src="images/ma-photo-pro.jpg"/>
+</div>
+<div class="w-full max-w-xs md:max-w-md lg:max-w-lg mt-2 bg-white p-5 md:p-6 rounded-2xl shadow-md">
+  <p class="font-headline italic text-base md:text-lg text-primary font-bold leading-relaxed">
+    "Un produit réussi naît de l’équilibre entre business, technologie et expérience utilisateur."
+  </p>
+</div>
+</div>
 <div>
-
-<h2>À propos</h2>
-
-
-<p>
-
-Issu du secteur de 
-<span class="highlight">l’assurance</span>
-où j’ai évolué pendant plus de 
-<span class="highlight">10 ans</span>,
-j’ai développé une forte compréhension des
-<span class="highlight">enjeux métier</span>
-et de l’
-<span class="highlight">expérience client</span>.
-
-</p>
-
-
-<p>
-
-Aujourd’hui 
-<span class="highlight">Product Owner</span>,
-j’accompagne les équipes dans la conception de
-<span class="highlight">produits digitaux performants</span>,
-en faisant le lien entre
-<span class="highlight">besoins business</span>,
-<span class="highlight">attentes utilisateurs</span>
-et
-<span class="highlight">solutions techniques</span>.
-
-</p>
-
-
+<span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">À propos</span>
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-8">Bonjour, je suis Jawad.</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>Avec 10 ans d’expérience dans le secteur de <strong>l’assurance</strong> et 7 ans dans le digital, j’accompagne les organisations dans la <strong>conception</strong> et <strong>l’évolution</strong> de leurs produits numériques..</p>
+<p>J’aide les organisations à transformer leurs enjeux métier en solutions digitales concrètes, en conciliant <strong>vision business</strong>, faisabilité technique et <strong>expérience utilisateur.</strong></p>
+<p>J’interviens à l’interface entre business, technologie et expérience utilisateur afin de délivrer des produits utiles, <strong>performants</strong> et alignés avec les <strong>objectifs stratégiques.</strong></p>
 </div>
-
+<div class="mt-12 flex gap-8">
+<div>
+<p class="text-3xl font-bold text-primary font-headline">15+</p>
+<p class="text-sm uppercase tracking-tighter font-semibold">Années d'expérience</p>
 </div>
-
+<div>
+<p class="text-3xl font-bold text-primary font-headline">20+</p>
+<p class="text-sm uppercase tracking-tighter font-semibold">Projets livrés</p>
 </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section: Tonal Layering Cards -->
+<section class="py-24 bg-surface" id="services">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface">Services &amp; Accompagnement</h2>
+<div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+</div>
+<div class="space-y-6">
+<!-- Service 1 -->
+<div class="group flex flex-col md:flex-row items-center bg-surface-container-low rounded-[2.5rem] p-4 pr-12 gap-8 hover:bg-white transition-all duration-500 border border-transparent hover:border-outline-variant/10">
+<div class="w-full md:w-1/3 aspect-video rounded-[2rem] overflow-hidden">
+<img alt="Customer journey mapping" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract visualization of a customer journey map with colorful sticky notes and connections on a glass wall, modern office aesthetic" src="https://www.expert-assure-paris.fr/wp-content/uploads/expert-assurance.jpeg"/>
+</div>
+<div class="flex-1 py-4">
+<h3 class="text-2xl font-bold mb-4">Expertise assurance &amp; Parcours clients</h3>
+<p class="text-on-surface-variant">Apport d’une forte compréhension des parcours clients assurance, des enjeux métier et des contraintes réglementaires pour concevoir des produits adaptés au secteur.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl hidden md:block">arrow_forward</span>
+</div>
+<!-- Service 2 -->
+<div class="group flex flex-col md:flex-row items-center bg-surface-container-low rounded-[2.5rem] p-4 pr-12 gap-8 hover:bg-white transition-all duration-500 border border-transparent hover:border-outline-variant/10">
+<div class="w-full md:w-1/3 aspect-video rounded-[2rem] overflow-hidden">
+<img alt="Product backlog board" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Digital kanban board interface with clean cards and progress indicators on a sleek computer monitor" src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=600"/>
+</div>
+<div class="flex-1 py-4">
+<h3 class="text-2xl font-bold mb-4">Product ownership &amp; Backlog management</h3>
+<p class="text-on-surface-variant">Structuration du backlog, rédaction de user stories et priorisation des fonctionnalités pour maximiser la valeur livrée.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl hidden md:block">arrow_forward</span>
+</div>
+<!-- Service 3 -->
+<div class="group flex flex-col md:flex-row items-center bg-surface-container-low rounded-[2.5rem] p-4 pr-12 gap-8 hover:bg-white transition-all duration-500 border border-transparent hover:border-outline-variant/10">
+<div class="w-full md:w-1/3 aspect-video rounded-[2rem] overflow-hidden">
+<img alt="Strategic planning session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Two professionals reviewing analytical charts and strategic documents in a bright airy conference room with minimalist furniture" src="https://f.hellowork.com/obs-static-images/seo/ObsJob/service-delivery-manager.jpg"/>
+</div>
+<div class="flex-1 py-4">
+<h3 class="text-2xl font-bold mb-4">Cadrage produit &amp; Discovery</h3>
+<p class="text-on-surface-variant">Ateliers de Design Thinking et cadrage, analyse des besoins utilisateurs, définition de la vision produit, prototypage rapide et cadrage du MVP pour sécuriser le lancement du projet.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl hidden md:block">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-24 bg-surface">
+
+  <div class="max-w-6xl mx-auto px-8">
+
+    <div class="text-center mb-16">
+
+      <h2 class="text-4xl md:text-5xl font-headline font-bold text-on-surface">
+        Ils m'ont fait confiance
+      </h2>
+
+      <div class="w-24 h-1 bg-primary mx-auto mt-6 rounded-full"></div>
+
+    </div>
+
+
+    <div class="flex flex-wrap justify-center items-center gap-12 md:gap-20">
+
+      <img src="images/logo-axa.png"
+           alt="AXA"
+           class="h-10 md:h-12 object-contain opacity-90">
+
+      <img src="images/logo-allianz.png"
+           alt="Allianz"
+           class="h-10 md:h-12 object-contain opacity-90">
+
+      <img src="images/logo-macif.png"
+           alt="MACIF"
+           class="h-10 md:h-12 object-contain opacity-90">
+
+    </div>
+
+  </div>
 
 </section>
-
-
-
-<section id="services" class="services">
-
-<div class="container">
-
-<h2>Services</h2>
-
-<div class="services-grid">
-
-
-<div class="service-card">
-
-<img src="https://www.expert-assure-paris.fr/wp-content/uploads/expert-assurance.jpeg">
-
-<h3>Expertise assurance & Parcours clients</h3>
-
-<p>
-Apport d’une forte compréhension des parcours clients assurance, des enjeux métier et des contraintes réglementaires pour concevoir des produits adaptés au secteur.
-</p>
-
-</div>
-
-
-<div class="service-card">
-
-<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=600">
-
-<h3>Product ownership & Backlog management</h3>
-
-<p>
-Structuration du backlog, rédaction de user stories et priorisation des fonctionnalités pour maximiser la valeur livrée.
-</p>
-
-</div>
-
-
-<div class="service-card">
-
-<img src="https://f.hellowork.com/obs-static-images/seo/ObsJob/service-delivery-manager.jpg">
-
-<h3>Cadrage produit & Discovery</h3>
-
-<p>
-Ateliers de cadrage, analyse des besoins utilisateurs et formalisation de la vision produit pour sécuriser le lancement du projet.
-</p>
-
-</div>
-
-</section>
-
-<section class="clients">
-
-<div class="container">
-
-<h2>Ils m'ont fait confiance</h2>
-
-<div class="logos">
-
-<img src="images/logo-axa.png" alt="AXA">
-
-<img src="images/logo-allianz.png" alt="Allianz">
-
-<img src="images/logo-macif.png" alt="Macif">
-
-</div>
-
-</div>
-
-</section>
-
-<section id="contact" class="cta-section">
-
-<div class="container">
-
-<h2>
-Parlons de votre projet produit
-</h2>
-
-<p>
-Disponible pour accompagner vos équipes sur vos enjeux digitaux.
-</p>
-
-<a href="mailto:jawadbougrine@gmail.com" class="cta">
-Me contacter
+<!-- Final CTA Section: Glassmorphism / Editorial Style -->
+<section class="py-24 px-8" id="contact">
+<div class="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 relative overflow-hidden text-center shadow-3xl">
+<!-- Background Decoration -->
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600 to-blue-800 -z-10"></div>
+<div class="absolute top-[-50%] left-[-10%] w-[120%] h-[200%] bg-[radial-gradient(circle,rgba(255,255,255,0.1)_0%,transparent_60%)] -z-10"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-headline font-bold text-on-primary mb-8">Parlons de votre produit</h2>
+<p class="text-xl text-on-primary/80 mb-12">Prenons 15 minutes pour échanger sur vos besoins.</p>
+<a href="mailto:jawadbougrine@gmail.com?subject=Demande%20de%20contact&body=Bonjour%20Jawad,%0A%0AJe%20souhaite%20échanger%20concernant%20mon%20projet."
+   class="bg-white text-primary px-10 py-5 rounded-full font-bold text-xl shadow-2xl hover:scale-105 transition-transform">
+   Me contacter
 </a>
-
 </div>
-
+</div>
 </section>
-
-
-
-<footer>
-
-<p>
-© JB Consulting
-</p>
-
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 border-t border-slate-200 w-full py-12">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-left">
+<p class="text-slate-600 text-sm font-sans">© 2026 JB Consulting. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 text-slate-500 font-medium font-sans">
+<a class="hover:text-blue-600 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Expertises</a>
+<a class="hover:text-blue-600 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Services</a>
+<a class="hover:text-blue-600 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">À propos</a>
+<a class="hover:text-blue-600 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Contact</a>
+<a class="hover:text-blue-600 underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+</div>
+</div>
 </footer>
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
 
+// ouvre / ferme avec le bouton
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("hidden");
+});
 
-</body>
+// ferme quand on clique sur un lien
+document.querySelectorAll("#mobile-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    menu.classList.add("hidden");
+  });
+});
 
-</html>
+// ferme si on clique ailleurs sur la page
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.add("hidden");
+  }
+});
+</script>
+</body></html>
